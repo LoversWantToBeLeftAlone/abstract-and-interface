@@ -1,0 +1,31 @@
+1.java.exe是java解释器
+2.构造方法可以重载
+3.break只中断某一层的循环
+4.变量名称不能用数字开头，不能和API重名；
+5.js用isNaN(value)的返回值判断；
+6.控件在界面上按表格行分列排列，应该使用GridLayout;
+7.配置tomcat虚拟目录时候需要打开server.xml文件；
+8.session和cookie的区别：
+	（1）cookie数据存放在客户的浏览器上，session存放在服务器上；
+	（2）cookie不是很安全，session较为安全；
+	（3）session会一定时间存放在服务器上，当访问多时可以使用cookie；
+	（4）单个cookie保存不能超过4k
+	（5）建议：登录等重要信息存放在session，其他信息可以保留在cookie；
+9.jsp作用域的通信对象：session,application,cookie；
+10.接口中的变量必须是static final的，并且赋值，不能更改，函数默认为public abstract。
+11.原生类：基本数据类型
+12.申明数组需要堆栈空间，所以数组属于应用数据类型，不属于原生类；
+13.接口只能是public；
+14.javax.Servlet的包中，属于类的是：GenericServlet和ServletException，Servlet和ServletContext不算；
+15.只有当一个类没有任何构造器，编译器才会为它创建一个默认构造器；
+16.final void f()和static final void f()；两个方法防止覆盖；
+17.传递给switch的只能是int ,short,char,byte。long,string都不可以；
+18.数据连接池：j2ee服务器启动时会建立一定数量的池连接，并一直维持不少于此个数目的池连接。客户端程序需要连接时，池驱动程序会返回一个未使用的池连接并标记为busy。如果当前没有空闲连接，池驱动程序就新建一定数量的连接，新建连接的数量由配置参数决定。当使用的池连接调用完成后，池驱动程序将此连接表记为busy，其他调用就可以使用这个连接。
+19.多线程继承Thread类和实现Runnable接口，同步的实现方式有两种，分别是synchronizd,wait,notify三个。
+20.forward：服务器请求资源，服务器直接访问目标地址的URL，目标地址可以接受request请求参数然后把结果发给浏览器，浏览器不知道服务器发送的内容从哪来，所以地址栏还是原来的地址；
+    redirect:服务器根据逻辑发送一个状态码，告诉浏览器请求那个地址，浏览器会重新进行请求，此时不可以用request传值，浏览器的地址会变成新的地址。
+
+21.垃圾回收器：对于GC来说，当程序员创建对象时候，GC就开始监控这个对象的地址，大小以及使用情况。通常，GC采用有向图的方式记录和管理heap中的所有对象，通过这种方式确定哪些是可达的，哪些是不可达的，当GC确定一些对象不可达的时候，GC就有责任回收这些内存空间，程序员可以收到执行System.gc()来通知GC运行，但是java语言规范并不保证GC一定会执行。
+
+22.servlet的生命周期：servlet被服务器实例化后，容器进行init方法，请求到达时运行其service方法，service方法自动运行与请求响应的doGet/doPost方法，当服务器决定将其销毁时候调用其destroy方法。
+	和cgi相比，区别在于servlet处于服务器进程中，塔通过多线程方式运气其service方法，一个实例可以服务于多个请求，并且其实例一般不会销毁，而CGI对每个请求都产生新的进程，服务完成就销毁。
